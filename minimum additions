@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+#include<iostream>
+#include<cmath>
+#include<vector>
+
+using namespace std;
+int main()
+{
+    int num;
+    cin>>num;
+    cout<<"input no. is"<< num<<endl;
+    int t; 
+    cin>>t;
+    while(t--)
+    {
+        cout<<"test case no. "<<t<<endl;
+        int i,n;int k; int A[n];int average; int avg=0;
+        cin>>n; 
+        cin>>k;
+        for(int i=0;i<n;i++)
+        {
+            cin>>A[i];
+        }
+        vector<int>v;
+        for(int i=0;i<n;i++)
+        {
+            v.push_back(A[i]);
+        }
+        while( i<n)
+        {
+            avg = (avg + A[i])/n;
+            average = floor(avg);
+            i++;
+        }
+        int m=v.size();
+        int j=1;
+        if(average> k)
+        {
+            v.push_back(j);
+            while(j<n)
+            {
+                avg = (avg + v[j])/m;
+                if(average <= k)
+                {
+                    cout<<j<<" "<<endl;
+                }
+                j++;
+            }
+        }
+        else{
+            cout<<"0"<<endl;
+        }
+    }
+    return 0;
+
+}
